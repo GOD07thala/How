@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Panel - Password Creator</title>
+  <style>
+    body {
+      background-color: #f1f3f6;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      padding: 50px;
+    }
+
+    .admin-box {
+      background: #fff;
+      padding: 30px;
+      width: 100%;
+      max-width: 500px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 12px 20px;
+      background: #2874f0;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #185cd5;
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-box">
+    <h2>Create Login Password</h2>
+    <label for="adminName">Name</label>
+    <input type="text" id="adminName" placeholder="Enter your name" />
+
+    <label for="newPass">New Password</label>
+    <input type="text" id="newPass" placeholder="Enter new password" />
+
+    <button onclick="generate()">Create Password</button>
+
+    <div id="result" style="margin-top: 20px;"></div>
+  </div>
+
+  <script>
+    function generate() {
+      const name = document.getElementById("adminName").value;
+      const pass = document.getElementById("newPass").value;
+      if (name && pass) {
+        document.getElementById("result").innerHTML =
+          `<strong>Saved:</strong> ${name} - ${pass}`;
+      } else {
+        alert("Please fill in both fields.");
+      }
+    }
+  </script>
+</body>
+</html>
